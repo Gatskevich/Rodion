@@ -22,15 +22,11 @@ class NVector:
         return np.math.sqrt(sum(x * x for x in self))
 
     def __sub__(self, other):
-        new_vector = []
-        for first_components, second_components in zip(self._components, other._components):
-            new_vector.append(first_components - second_components)
+        new_vector = [a - b for a, b in zip(self, other)]
         return NVector(new_vector)
 
-    def __sum__(self, other):
-        new_vector = []
-        for first_vector, second_vector in zip(self._components, other._components):
-            new_vector.append(first_vector + second_vector)
+    def __add__(self, other):
+        new_vector = [a + b for a, b in zip(self, other)]
         return NVector(new_vector)
 
     def __mul__(self, other):
@@ -40,10 +36,12 @@ class NVector:
                 new_coordinates.append(coordinate * other)
             return NVector(*new_coordinates)
         elif isinstance(other, NVector):
-            return sum(first * second for first, second in zip(self._components, other._components))
+            return sum(first * second for first, second in zip(self, other))
 
 
 if __name__ == "__main__":
     n1 = NVector([1, 2, 3])
     n2 = NVector([1, 1, 1])
-    print(NVector.__sub__(n1, n2))
+    print(n1 - n2)
+    print(n1 + n2)
+    print(n1 * n2)
