@@ -16,4 +16,7 @@ def dictionary_main():
     list_dict.reverse()
     for i in list_dict[:10]:
         print(i[0])
+    pass
+    pass
+
 

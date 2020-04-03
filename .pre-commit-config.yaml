@@ -1,0 +1,9 @@
+repos:
+- repo: https://github.com/gvanderest/pylama-pre-commit
+  rev: 0.1.2
+  hooks:
+  - id: pylama
+- repo: https://github.com/pre-commit/mirrors-autopep8
+  rev: 5985fb24f71421cd14f9cda5d6c7a06fc30b321c
+  hooks:
+  - id: autopep8
