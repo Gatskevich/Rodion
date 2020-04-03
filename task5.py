@@ -1,5 +1,6 @@
-from Task2 import serializer_json
+from task2 import serializer_json
 import json
+
 
 def test_json():
     test_1 = "12"
@@ -16,5 +17,7 @@ def test_json():
     assert serializer_json(test_5) == json.dumps(test_5)
     assert serializer_json(test_6) == json.dumps(test_6)
     assert serializer_json(test_7) == json.dumps(test_7)
+
+
 if __name__ == "__main__":
     test_json()

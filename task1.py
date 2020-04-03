@@ -1,6 +1,3 @@
-import operator
-
-
 class BinHeap:
     def __init__(self):
         self.heap_list = [(0, 0)]
@@ -58,9 +55,8 @@ class BinHeap:
 
 
 def sort_stack():
-    f = open("C:\Lol\Value.txt")
+    f = open("C:\\Lol\\Value.txt")
     stack = 0
-    fl = False
     while stack < 5000:
         a = []
         stack += 1
@@ -73,12 +69,6 @@ def sort_stack():
         for item in a:
             writefile.write("%s\n" % item)
         writefile.close()
-
-
-def heapify(a, i):
-    left = 2 * i
-    right = 2 * i + 1
-    largest = i
 
 
 def update(stack):
@@ -129,5 +119,5 @@ def merge():
             b.insert((line, k + 1))
         out_fp.write(str(elem[0]) + "\n")
 
-merge()
 
+merge()
