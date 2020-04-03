@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Myprogect.iml" filepath="$PROJECT_DIR$/.idea/Myprogect.iml" />
-      <module fileurl="file://$USER_HOME$/OneDrive/Рабочий стол/django-exaples/.idea/django-exaples.iml" filepath="$USER_HOME$/OneDrive/Рабочий стол/django-exaples/.idea/django-exaples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Laba2.iml" filepath="$PROJECT_DIR$/.idea/Laba2.iml" />
     </modules>
   </component>
 </project>
