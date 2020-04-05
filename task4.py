@@ -1,19 +1,20 @@
 from time import sleep
+from functools import wraps
 
 
 def my_cache(func):
+
     cache = dict()
 
+    @wraps(func)
     def my_cache_(*args, **kwargs):
-        keys = list(args)
-        keys.extend(kwargs.values())
-        sorted(keys)
-        key = hash(tuple(keys))
+        key = hash(tuple((sorted(kwargs.items(), key=lambda t: t[0]))))
         if key in cache:
             return cache[key]
         else:
             res = func(*args, **kwargs)
             cache[key] = res
+            print(res)
             return res
 
     return my_cache_
@@ -21,15 +22,14 @@ def my_cache(func):
 
 @my_cache
 def count(a, *x, z=10):
-    sleep(2)
     x = list(x)
     x.append(z)
     x.append(a)
-    return sum(x)
+    return x
 
 
 def main():
-    count(1, 2, 3, 4, 5)
+    count("kek", z=10)
     count(1, 2, 3, 4, 5)
     count(1, 2, 3, 4, 5, z=6)
     count(1)
